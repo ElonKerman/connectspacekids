@@ -1,0 +1,22 @@
+<h1>All launches</h1>
+
+  <% @launch_infos.each do |launch_info| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= launch_info.name%></h5>
+
+      <p class="card-text"><strong>location: </strong><%= launch_info.location %></p>
+      <p class="card-text"><strong>date and time: </strong><%= launch_info.date_time %></p>
+      <p class="card-text"><strong>company: </strong><%= launch_info.company %></p>
+      <p class="card-text"><strong>reflight: </strong><%= launch_info.reflight %></p>
+      <p class="card-text"> <strong>landing: </strong> <%= launch_info.landing %></p>
+      <p class="card-text"> <strong>destination: </strong> <%= launch_info.destination%></p>
+      <p class="card-text"> <strong>vehicle: </strong> <%= launch_info.vehicle%></p>
+      <p class="card-text"> <strong>payload: </strong> <%= launch_info.payload%></p>
+      <p class="card-text"> <strong>orbit: </strong> <%= launch_info.orbit%></p>
+      <p class="card-text"> <strong>description: </strong> <%= launch_info.description%></p>
+      <p class="card-text"> <strong>customer: </strong> <%= launch_info.customer%></p>
+    </div>
+  </div>
+
+  <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_25_155338) do
+ActiveRecord::Schema.define(version: 2018_06_28_155054) do
 
   create_table "launch_infos", force: :cascade do |t|
     t.string "location"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_06_25_155338) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer"
+    t.string "name"
   end
 
 end
