@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.0'
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
+gem 'devise'
+gem "draft_generators", :git => "https://github.com/firstdraft/draft_generators"
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
