@@ -5,7 +5,18 @@
       <% @launches.each do |launch| %>
       <div class="card" >
         <div class="card-body">
-          <h5 class="card-title"><%= launch %></h5>
+          <% if launch['rocket']['agencies'].present? %>
+          <h5 class="card-title">Company Name: <%= launch['rocket']['agencies'][0]['name']%></h5>
+          <% end %>
+          <h5 class="card-title">Launch Name: <%= launch['name'] %></h5>
+          <h5 class="card-title">
+             <a href="<%= launch['vidURLs'][0] %>">Webcast</a>
+          </h5>
+          <h5 class="card-title">Launchpad: <%= launch['location']['pads'][0]['name'] %></h5>
+          <% if launch['missions'][0].present? && launch['missions'][0]['description'].present? %>
+          <h5 class="card-title">Mission Description: <%= launch['missions'][0]['description'] %></h5>
+          <% end %>
+          <h5 class="card-title">Time of Launch: <%= DateTime.parse(launch['net']).in_time_zone('Central Time (US & Canada)').strftime('%A, %d %b %Y %l:%M %p CT') %></h5>
         </div>
       </div>
       <% end %>
