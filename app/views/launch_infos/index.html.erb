@@ -16,7 +16,7 @@
           <% if launch['missions'][0].present? && launch['missions'][0]['description'].present? %>
           <h5 class="card-title">Mission Description: <%= launch['missions'][0]['description'] %></h5>
           <% end %>
-          <h5 class="card-title">Time of Launch: <%= DateTime.parse(launch['net']).in_time_zone('Central Time (US & Canada)').strftime('%A, %d %b %Y %l:%M %p CT') %></h5>
+          <h5 class="card-title">Time of Launch: <%= DateTime.parse(launch['net']).in_time_zone('Central Time (US & Canada)').strftime('%A, %b %d %Y %l:%M %p CT') %></h5>
         </div>
       </div>
       <% end %>
