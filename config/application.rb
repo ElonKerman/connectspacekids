@@ -17,7 +17,7 @@ module Connectspacekids
       port:                 587,
       domain:               'Connectspacekids.herokuapp.com',
       user_name:            ENV["email"],
-      password:             "something",
+      password:             ENV["password"],
       authentication:       'plain',
       enable_starttls_auto: true }
     # Settings in config/environments/* take precedence over those specified here.
