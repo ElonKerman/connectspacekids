@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_08_195006) do
+ActiveRecord::Schema.define(version: 2018_11_08_011414) do
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name"
+    t.text "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "launch_infos", force: :cascade do |t|
     t.string "location"
@@ -27,6 +34,14 @@ ActiveRecord::Schema.define(version: 2018_09_08_195006) do
     t.datetime "updated_at", null: false
     t.string "customer"
     t.string "name"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "text"
+    t.integer "user_id"
+    t.integer "channel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

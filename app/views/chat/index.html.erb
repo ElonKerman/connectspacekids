@@ -1,0 +1,26 @@
+<h1 class="text-center">All Chat Channels</h1>
+  <div class="row justify-content-md-center">
+    <div class="col-md-1">
+      <% @channels.each do |channel| %>
+        <% if channel == @channel %>
+          <p><a href="/channels/<%=channel.id%>-<%=channel.name%>" class="btn btn-dark"><%= channel.name %></a></p>
+        <% else %>
+          <p><a href="/channels/<%=channel.id%>-<%=channel.name%>" class="btn btn-light"><%= channel.name %></a></p>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-11">
+      <div class="row">
+        <div class="col-md-6">
+          <form class="form-inline" action="/sendm">
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputtext" class="sr-only">message</label>
+              <input type="text" class="form-control" id="inputtext" placeholder="message" name="message">
+            </div>
+            <input type="hidden" value="<%= @channel.id %>" name="channel_id">
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
