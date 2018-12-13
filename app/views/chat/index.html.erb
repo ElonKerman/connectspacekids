@@ -14,7 +14,7 @@
         <div class="col-md-6">
           <div class="messages">
             <% @messages.each do |message| %>
-            <p> <%= User.find(message.user_id).first_name %> <%= message.text %></p>
+            <p> <%= User.find(message.user_id).first_name %>: <%= message.text %></p>
             <% end %>
           </div>
           <form class="form-inline" action="/sendm">

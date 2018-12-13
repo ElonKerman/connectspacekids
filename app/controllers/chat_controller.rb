@@ -7,10 +7,14 @@ class ChatController < ApplicationController
     redirect_to("/channels/#{@channels.first.id}")
   end
   def channel
-    @channels = Channel.all
-    @channel = Channel.find(params["id"])
-    @messages = Message.where(:channel_id => @channel.id)
-    render('index.html.erb')
+    if current_user.blank?
+      redirect_to("/", :notice => "You must login to access the chat feature of connectspacekids.")
+    else
+      @channels = Channel.all
+      @channel = Channel.find(params["id"])
+      @messages = Message.where(:channel_id => @channel.id)
+      render('index.html.erb')
+    end
   end
   def sendm
     message = Message.new
