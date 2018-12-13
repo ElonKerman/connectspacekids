@@ -9,6 +9,7 @@ class ChatController < ApplicationController
   def channel
     @channels = Channel.all
     @channel = Channel.find(params["id"])
+    @messages = Message.where(:channel_id => @channel.id)
     render('index.html.erb')
   end
   def sendm

@@ -12,6 +12,11 @@
     <div class="col-md-11">
       <div class="row">
         <div class="col-md-6">
+          <div class="messages">
+            <% @messages.each do |message| %>
+            <p> <%= User.find(message.user_id).first_name %> <%= message.text %></p>
+            <% end %>
+          </div>
           <form class="form-inline" action="/sendm">
             <div class="form-group mx-sm-3 mb-2">
               <label for="inputtext" class="sr-only">message</label>
