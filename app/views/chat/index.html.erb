@@ -14,7 +14,12 @@
         <div class="col-md-6">
           <div class="messages">
             <% @messages.each do |message| %>
-            <p> <%= User.find(message.user_id).first_name %>: <%= message.text %></p>
+            <p>
+              <%= User.find(message.user_id).username %>: <%= message.text %>
+              <% if current_user.admin %>
+                <a href="/messages/<%= message.id %>/delete"><i class="fas fa-eraser"></i></a>
+              <% end %>
+            </p>
             <% end %>
           </div>
           <form class="form-inline" action="/sendm">

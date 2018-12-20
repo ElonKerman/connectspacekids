@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get("/chat", {:controller=>"chat", :action=>"index"})
   get("/channels/:id", {:controller=>"chat", :action=>"channel"})
   get("/sendm", {:controller=>"chat", :action=>"sendm"})
+  get("/messages/:id/delete", {:controller=>"chat", :action=>"deletem"})
 end

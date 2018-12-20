@@ -24,4 +24,9 @@ class ChatController < ApplicationController
     message.save
     redirect_to("/channels/#{message.channel_id}")
   end
+  def deletem
+    message = Message.find(params["id"])
+    message.destroy
+    redirect_to("/channels/#{message.channel_id}")
+  end
 end
