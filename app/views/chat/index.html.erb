@@ -15,6 +15,9 @@
           <div class="messages">
             <% @messages.each do |message| %>
             <p>
+              <% if current_user.admin %>
+                <a href="/users/<%= message.user_id %>/delete" rel = "nofollow"><i class="fas fa-dumpster-fire"></i></a>
+              <% end %>
               <%= User.find(message.user_id).username %>: <%= message.text %>
               <% if current_user.admin %>
                 <a href="/messages/<%= message.id %>/delete"><i class="fas fa-eraser"></i></a>
