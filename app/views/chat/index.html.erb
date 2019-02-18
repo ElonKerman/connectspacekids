@@ -16,11 +16,15 @@
             <% @messages.each do |message| %>
             <p>
               <% if current_user.admin %>
-                <a href="/users/<%= message.user_id %>/delete" rel = "nofollow"><i class="fas fa-dumpster-fire"></i></a>
+                <a href="/users/<%= message.user_id %>/delete" rel = "nofollow" data-confirm = "are you sure">
+                  <i class="fas fa-dumpster-fire"></i>
+                </a>
               <% end %>
-              <%= User.find(message.user_id).username %>: <%= message.text %>
+              <span class="message"><%= User.find(message.user_id).username %>: <%= message.text %></span>
               <% if current_user.admin %>
-                <a href="/messages/<%= message.id %>/delete"><i class="fas fa-eraser"></i></a>
+                <a href="/messages/<%= message.id %>/delete" data-confirm = "are you sure">
+                  <i class="fas fa-eraser"></i>
+                </a>
               <% end %>
             </p>
             <% end %>
@@ -37,3 +41,20 @@
       </div>
     </div>
   </div>
+  <script>
+    $(".message").each(function(){
+      console.log(this.textContent.length)
+      for (var i = 0;i<this.textContent.length;i++){
+        var soc;
+        var eoc;
+        if (this.textContent[i] == "#") {
+          soc = i;
+          console.log(this.textContent[i])
+        }
+        if (soc && this.textContent[i] == " "){
+          eoc = i;
+        }
+      }
+      console.log(this.textContent.substring(soc, eoc))
+    })
+  </script>

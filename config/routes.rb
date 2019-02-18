@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   #}
 
   get("/launchinfo", {:controller=>"launch_infos", :action=>"index"})
-  root 'launch_infos#index'
+  root 'pc#home'
 
 
   get("/chat", {:controller=>"chat", :action=>"index"})
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get("/sendm", {:controller=>"chat", :action=>"sendm"})
   get("/messages/:id/delete", {:controller=>"chat", :action=>"deletem"})
   get("/users/:id/delete", {:controller=>"chat", :action=>"deleteu"})
+  get("/contactus", {:controller=>"pc", :action=>"contactus"})
 end
