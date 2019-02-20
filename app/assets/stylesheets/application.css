@@ -13,6 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+.background-container {
+    background-image:url("/background_image.png");
+    background-size: cover;
+    height: 700px;
+}
+
+.background-opaque-overlay {
+    background: linear-gradient(to bottom, rgba(255,255,225,0.1), rgba(225,225,255,0.1));
+    opacity: .9;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 100%;
+}
 .form-inline .form-group{
   width:80%;
 }
@@ -22,4 +36,51 @@
 
 footer{
   text-align: center;
+}
+
+.launches.col-md-10 {
+    overflow: scroll;
+    height: 600px;
+    margin-bottom: 40px;
+}
+
+.text-center {
+    color: white;
+}
+
+
+.main-content {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-right: 100px;
+    height:100%;
+}
+
+.contact-us-text-container {
+    flex-direction: column;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.contact-us-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.about-us-header {
+    flex-align: center;
+}
+
+.contact-us-image {
+    height: 100px;
+    width:100px;
+    margin: 20px;
+}
+
+.contact-us-text {
+    margin-bottom: 20px;
 }
