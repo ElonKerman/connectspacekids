@@ -98,10 +98,10 @@ footer{
         width: 70%;
     }
     .main-content {
-    width: 80%;
-    flex-direction: row;
+        width: 80%;
+        flex-direction: row;
     }
-    
+
     .contact-us-text-container {
         margin-top: 25px;
     }
