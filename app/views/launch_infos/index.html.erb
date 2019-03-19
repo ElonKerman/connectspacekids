@@ -1,25 +1,54 @@
-<h1 class="text-center">All launches</h1>
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-md-4">
-      <% @launches.each do |launch| %>
-      <div class="card" >
-        <div class="card-body">
-          <% if launch['rocket']['agencies'].present? %>
-          <h5 class="card-title">Company Name: <%= launch['rocket']['agencies'][0]['name']%></h5>
-          <% end %>
-          <h5 class="card-title">Launch Name: <%= launch['name'] %></h5>
-          <h5 class="card-title">
-             <a href="<%= launch['vidURLs'][0] %>">Webcast</a>
-          </h5>
-          <h5 class="card-title">Launchpad: <%= launch['location']['pads'][0]['name'] %></h5>
-          <% if launch['missions'][0].present? && launch['missions'][0]['description'].present? %>
-          <h5 class="card-title">Mission Description: <%= launch['missions'][0]['description'] %></h5>
-          <% end %>
-          <h5 class="card-title">Time of Launch: <%= DateTime.parse(launch['net']).in_time_zone('Central Time (US & Canada)').strftime('%A, %b %d %Y %l:%M %p CT') %></h5>
-        </div>
+<div class="background-container">
+  <div class="background-opaque-overlay">
+      <h1 class="text-center">All Launches</h1>
+      <div class="container">
+          <div class="row justify-content-md-center">
+              <div class="launches col-md-10">
+                  <% @launches.each do |launch| %>
+                    <div class="card" >
+                        <div class="card-body">
+                            <div class="wrapper-title-text">
+                                <h5 class="card-title">Time of Launch: </h5>
+                                <h6 class="card-text"><%= DateTime.parse(launch['net']).in_time_zone('Central Time (US & Canada)').strftime('%A, %b %d %Y %l:%M %p CT') %></h6>
+                            </div>
+                            <div class="wrapper-title-text">
+                                <h5 class="card-title">Launch Name:</h5>
+                                <h6 class="card-text"><%= launch['name'] %></h6>
+                            </div>
+                            <div class="toggle">
+                                <!-- Checkbox toggle -->
+                                <input type="checkbox" value="selected" id="more-info" class="toggle-input">
+                                <label for="more-info" class="toggle-label">More Information: </label> 
+
+                                <!-- Content to toggle -->
+                                <div role="toggle" class="toggle-content">
+                                    <br>  
+                                    <% if launch['rocket']['agencies'].present? %>
+                                      <div class="wrapper-title-text">
+                                          <h5 class="card-title">Company Name:</h5>
+                                          <h6 class="card-text"><%= launch['rocket']['agencies'][0]['name']%></h6>
+                                      </div>
+                                    <% end %>
+                                    <div class="wrapper-title-text">
+                                        <h5 class="card-title">Launchpad:</h5>
+                                        <h6 class="card-text"><%= launch['location']['pads'][0]['name'] %></h6>
+                                    </div>
+                                    <% if launch['missions'][0].present? && launch['missions'][0]['description'].present? %>
+                                      <div class="wrapper-title-text">
+                                          <h5 class="card-title">Mission Description:</h5>
+                                          <h6 class="card-text mission-description"><%= launch['missions'][0]['description'] %></h6>
+                                      </div>
+                                    <% end %>
+                                    <h5 class="card-title">
+                                        <a href="<%= launch['vidURLs'][0] %>">Webcast</a>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>
+              </div>
+          </div>
       </div>
-      <% end %>
-    </div>
   </div>
 </div>
