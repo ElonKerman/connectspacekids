@@ -84,4 +84,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 
-gem ’tzinfo’, '~> 1.1’
