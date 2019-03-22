@@ -14,10 +14,32 @@
  *= require_self
  */
 
-.background-container {
-    background-image:url("/background_image.png");
-    background-size: cover;
-    height: 700px;
+.content {
+    min-height: calc(100vh - 70px);
+}
+footer {
+    height: 50px;
+    color: white;
+}
+
+#background-container {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+}
+
+#background-container img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
 }
 
 .background-opaque-overlay {
