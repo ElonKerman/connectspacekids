@@ -4,7 +4,7 @@
       <div class="container">
           <div class="row justify-content-md-center">
               <div class="launches col-md-10">
-                  <% @launches.each do |launch| %>
+                  <% @launches.each_with_index do |launch, index| %>
                     <div class="card" >
                         <div class="card-body">
                             <div class="wrapper-title-text">
@@ -17,8 +17,8 @@
                             </div>
                             <div class="toggle">
                                 <!-- Checkbox toggle -->
-                                <input type="checkbox" value="selected" id="more-info" class="toggle-input">
-                                <label for="more-info" class="toggle-label">More Information: </label> 
+                                <input type="checkbox" value="selected" id="more-info-<%= index %>" class="toggle-input">
+                                <label for="more-info-<%= index %>" class="toggle-label">More Information: </label> 
 
                                 <!-- Content to toggle -->
                                 <div role="toggle" class="toggle-content">

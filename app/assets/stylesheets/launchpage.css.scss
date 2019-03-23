@@ -26,7 +26,7 @@ label.toggle-label {
     display: none;
 }
 
-input.toggle-input {
+.toggle-input {
     display: none;
 
     &:not(checked) ~ .toggle-content {
@@ -34,7 +34,7 @@ input.toggle-input {
     }
 }
 
-input.toggle-input:checked {
+.toggle-input:checked {
     ~ .toggle-content {
         display: block;
     }
