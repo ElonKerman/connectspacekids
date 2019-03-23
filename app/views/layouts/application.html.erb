@@ -60,7 +60,6 @@
                 </ul>
             </div>
         </nav>
-        <div class="background-container">
           <div class="container">
               <div class="row">
                   <div class="col-md-12">
@@ -84,9 +83,11 @@
               </div>
           </div>
           <%= yield %>
-        </div>
         <footer>
             connectspacekids © 2019
         </footer>
+        <div id="background-container">
+          <img src="/background_image.png" id="background-image" alt="graphic design of space and planets">
+        </div>
     </body>
 </html>
