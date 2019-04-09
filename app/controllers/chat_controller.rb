@@ -38,4 +38,7 @@ class ChatController < ApplicationController
     end
     redirect_back(:fallback_location => "/")
   end
+  def tos
+    render('tos.html.erb')
+  end
 end
