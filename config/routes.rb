@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get("/users/:id/delete", {:controller=>"chat", :action=>"deleteu"})
   get("/contactus", {:controller=>"pc", :action=>"contactus"})
   get("/chat-tos", {:controller=>"chat", :action=>"tos"})
+  get("/achat", {:controller=>"chat", :action=>"achat"})
 end

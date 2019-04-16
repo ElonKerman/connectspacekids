@@ -31,7 +31,7 @@
                           </p>
                         <% end %>
                     </div>
-                    <form class="form-inline" action="/sendm">
+                    <form class="form-inline sendm-form" action="/sendm" data-remote='true'>
                         <div class="form-group mb-2">
                             <label for="inputtext" class="sr-only">message</label>
                             <input type="text" class="form-control" id="inputtext" placeholder="message" name="message">
@@ -46,19 +46,25 @@
   </div>
 </div>
 <script>
-  $(".message").each(function () {
-      console.log(this.textContent.length)
-      for (var i = 0; i < this.textContent.length; i++) {
-          var soc;
-          var eoc;
-          if (this.textContent[i] == "#") {
-              soc = i;
-              console.log(this.textContent[i])
-          }
-          if (soc && this.textContent[i] == " ") {
-              eoc = i;
-          }
-      }
-      console.log(this.textContent.substring(soc, eoc))
-  })
+  //$(".message").each(function () {
+      //console.log(this.textContent.length)
+      //for (var i = 0; i < this.textContent.length; i++) {
+          //var soc;
+          //var eoc;
+          //if (this.textContent[i] == "#") {
+              //soc = i;
+              //console.log(this.textContent[i])
+          //}
+          //if (soc && this.textContent[i] == " ") {
+              //eoc = i;
+          //}
+      //}
+      //console.log(this.textContent.substring(soc, eoc))
+  //})
+
+  setInterval(function(){
+    $.getJSON( "/channels/<%= @channel.id %>", function(data){
+      console.log("test")
+    })
+  }, 500)
 </script>
