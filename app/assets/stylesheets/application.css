@@ -13,13 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
 .content {
     min-height: calc(100vh - 130px);
 }
 footer {
     height: 50px;
-    color: white;
 }
 
 #background-container {
@@ -50,16 +48,19 @@ footer {
     height: 100%;
     width: 80%;
 }
+
 .form-inline .form-group{
-  width:80%;
+    width:80%;
 }
 .form-inline .form-control{
-  width:100%;
+    width:100%;
 }
 
 
 footer{
-  text-align: center;
+    text-align: center;
+    height: 50px;
+    background: white;
 }
 
 .launches.col-md-10 {
@@ -95,6 +96,7 @@ footer{
     display: flex;
     justify-content: center;
     color: white;
+    padding: 1rem;
 }
 
 .about-us-header {
@@ -120,6 +122,60 @@ footer{
     color: white;
 }
 
+.homepage-banner {
+    width: 100%;
+}
+
+.top.homepage-banner {
+    padding-bottom: 20px;
+}
+
+.bottom.homepage-banner {
+    padding-top: 20px;
+}
+
+.homepage-text-image-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.homepage.background-opaque-overlay {
+    background: white;
+    opacity: 1;
+}
+
+.homepage-image {
+    width: 60%;
+    height: 100%;
+}
+
+.homepage-text {
+    width: 40%;
+    margin: 20px;
+}
+
+.homepage-background-banner {
+    height: 300px;
+    overflow: hidden;
+}
+@media (min-width: 1000px) {
+    h3 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    h3 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+}
 
 @media (min-width: 768px) {
     .background-opaque-overlay {
@@ -132,5 +188,17 @@ footer{
 
     .contact-us-text-container {
         margin-top: 40px;
+    }
+}
+
+@media (max-width: 425px) {
+    .homepage-text-image-wrapper {
+        flex-direction: column;
+    }
+    .homepage-text {
+        width: 90%;
+    }
+    .homepage-image {
+        width: 100%;
     }
 }
