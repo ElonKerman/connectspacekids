@@ -30,12 +30,12 @@ footer {
 }
 
 #background-container img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     min-width: 50%;
     min-height: 50%;
 }
@@ -122,6 +122,7 @@ footer{
     color: white;
 }
 
+
 .homepage-banner {
     width: 100%;
 }
@@ -175,6 +176,10 @@ footer{
     p {
         font-size: 2rem;
     }
+=======
+.chat-tos {
+    color: white;
+
 }
 
 @media (min-width: 768px) {
@@ -191,6 +196,7 @@ footer{
     }
 }
 
+
 @media (max-width: 425px) {
     .homepage-text-image-wrapper {
         flex-direction: column;
@@ -202,3 +208,5 @@ footer{
         width: 100%;
     }
 }
+=======
+

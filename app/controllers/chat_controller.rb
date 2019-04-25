@@ -22,7 +22,10 @@ class ChatController < ApplicationController
     message.text = params["message"]
     message.channel_id = params["channel_id"]
     message.save
-    redirect_to("/channels/#{message.channel_id}")
+    respond_to do |format|
+      format.html {redirect_to("/channels/#{message.channel_id}")}
+      format.js
+    end
   end
   def deletem
     message = Message.find(params["id"])
@@ -37,5 +40,20 @@ class ChatController < ApplicationController
       user.destroy
     end
     redirect_back(:fallback_location => "/")
+  end
+  def tos
+    if current_user.blank?
+      redirect_to("/")
+    elsif current_user.accepted_chat_tos == nil
+      render('tos.html.erb')
+    else
+      redirect_to("/chat")
+    end
+  end
+  def achat
+    user = current_user
+    user.accepted_chat_tos = true
+    user.save
+    redirect_to("/chat")
   end
 end
