@@ -1,19 +1,16 @@
 nav.navbar {
     background: white;
-    height: 180px;
     padding: 0px;
 }
 
 .navbar-light {
     .navbar-brand {
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-bottom: 20px;
+        margin-top: 3px;
     }
 }
 
 .logo {
-    height: 151px;
+    width: 100%;
 }
 .left {
     display: flex;
@@ -32,6 +29,7 @@ nav.navbar {
 .navbar-nav {
     .nav-item {
         display: flex;
+        margin-left: 5px;
     }
 }
 
@@ -44,17 +42,23 @@ nav.navbar {
     }   
 }
 
-#navbarSupportedContent.collapse.navbar-collapse {
-    align-items: flex-end;
-    padding-top: 20px;
-    height: 100%;
-}
-
 .navbar-nav {
     .nav-link {
+        font-weight: 500;
         &:hover,
             &:focus {
             -webkit-transform: scale(1.2);
+        }
+    }
+}
+
+@media(max-width: 374px) {
+    .logo {
+        width: 230px;
+    }
+    .navbar-nav {
+        .nav-item {
+            margin-left: 0px;
         }
     }
 }
@@ -76,8 +80,6 @@ nav.navbar {
         border: 1mm double rgba(0,0,0,0.1);
         padding-top: 5px;
         padding-left: 5px;
-        margin-top: -15px;
-        box-shadow: 12px 12px 2px 1px #797b7f;
     }
 
     .left {
@@ -88,48 +90,51 @@ nav.navbar {
     }
 }
 
+@media (min-width: 992px) and (max-width: 1040px) {
+    .navbar-nav {
+        .nav-item {
+            margin-left: 0px;
+        }
+        .nav-link {
+            font-size: 1.5rem;
+        }
+    }
+}
+
 @media (min-width: 1440px) and (max-width: 2000px) {
     #navbarSupportedContent.collapse.navbar-collapse {
         height: 100%;
-        align-items: flex-end;
-        padding-top: 20px;
     }
     .right {
         padding-right: 15px;
     }
     .navbar-nav {
+        .nav-item {
+            padding-right:10px;
+            margin-left: 0px;
+        }
         .nav-link {
-            font-weight: 500;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }   
-    }
-    .nav-item {
-        padding-right:10px;
     }
 }
 
 @media (min-width: 2000px) {
     nav.navbar {
-        height: 300px;
+        
     }
 
     .navbar-light {
+        align-items: flex-end;
         .navbar-brand {
-            padding-top: 50px;
-            padding-left: 50px;
-            padding-right: 20px;
-            padding-bottom: 40px;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            padding: 0px;
         }
     }
-
+    
     .logo {
-        height: 251px;
-    }
-
-    #navbarSupportedContent.collapse.navbar-collapse {
-        height: 100%;
-        align-items: flex-end;
-        padding-top: 40px;
+        width: 450px;
     }
 
     .left {
@@ -143,8 +148,8 @@ nav.navbar {
 
     .navbar-nav {
         .nav-link {
-            font-weight: 500;
-            font-size: 4rem;
+            font-size: 3.5rem;
+            margin: 10px;
         }   
     }
 }
