@@ -13,7 +13,12 @@ class ChatController < ApplicationController
       @channels = Channel.all
       @channel = Channel.find(params["id"])
       @messages = Message.where(:channel_id => @channel.id)
-      render('index.html.erb')
+      respond_to do |format|
+        format.html {render('index.html.erb')}
+        format.json {
+          render json: @messages
+        }
+      end
     end
   end
   def sendm
