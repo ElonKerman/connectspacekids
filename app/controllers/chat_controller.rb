@@ -16,7 +16,7 @@ class ChatController < ApplicationController
       respond_to do |format|
         format.html {render('index.html.erb')}
         format.json {
-          render json: @messages
+          render json: @messages, include: :user
         }
       end
     end
