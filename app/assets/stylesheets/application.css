@@ -136,7 +136,7 @@ footer{
 .homepage-text-image-wrapper {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .homepage.background-opaque-overlay {
@@ -145,11 +145,11 @@ footer{
 }
 
 .homepage-image {
-    width: 60%;
+    width: 100%;
 }
 
 .homepage-text {
-    width: 40%;
+    width: 90%;
     margin: 20px;
 }
 
@@ -165,6 +165,14 @@ footer{
     }
     p {
         font-size: 1.2rem;
+    }
+    .homepage-text-image-wrapper {
+        flex-wrap: nowrap;
+    }
+    .homepage-image {
+        width: 70%;
+        height: 70%;
+        margin: 20px;
     }
 }
 
@@ -183,9 +191,6 @@ footer{
 }
 
 @media (min-width: 768px) {
-    .background-opaque-overlay {
-        width: 70%;
-    }
     .main-content {
         width: 80%;
         flex-direction: row;
@@ -196,14 +201,22 @@ footer{
     }
 }
 
+@media (max-width: 768px) {
+    .homepage-image {
+        width: 100%;
+    }
+}
+
 
 @media (max-width: 425px) {
     .homepage-text-image-wrapper {
         flex-direction: column;
     }
+    
     .homepage-text {
         width: 90%;
     }
+    
     .homepage-image {
         width: 100%;
         height: auto;
