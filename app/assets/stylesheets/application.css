@@ -16,9 +16,6 @@
 .content {
     min-height: calc(100vh - 130px);
 }
-footer {
-    height: 50px;
-}
 
 #background-container {
     position: fixed;
@@ -60,7 +57,8 @@ footer {
 footer{
     text-align: center;
     height: 50px;
-    background: white;
+    color: white;
+    padding: 12px 0 15px 0;
 }
 
 .launches.col-md-10 {
@@ -160,6 +158,11 @@ footer{
     height: 300px;
     overflow: hidden;
 }
+
+.homepage-footer {
+    background: url("/background_image.png");
+}
+
 @media (min-width: 1000px) {
     h3 {
         font-size: 2rem;
@@ -209,5 +212,6 @@ footer{
     }
     .homepage-image {
         width: 100%;
+        height: auto;
     }
 }
