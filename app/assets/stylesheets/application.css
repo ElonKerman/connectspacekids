@@ -146,7 +146,6 @@ footer{
 
 .homepage-image {
     width: 60%;
-    height: 100%;
 }
 
 .homepage-text {
@@ -157,10 +156,6 @@ footer{
 .homepage-background-banner {
     height: 300px;
     overflow: hidden;
-}
-
-.homepage-footer {
-    background: url("/background_image.png");
 }
 
 @media (min-width: 1000px) {
