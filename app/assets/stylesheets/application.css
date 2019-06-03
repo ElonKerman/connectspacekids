@@ -158,6 +158,12 @@ footer{
     overflow: hidden;
 }
 
+<<<<<<< HEAD
+=======
+.homepage-footer {
+   color: black;
+}
+>>>>>>> finish changes for adding margin to entire page at screensizes larger than 1920px
 @media (min-width: 1000px) {
     h3 {
         font-size: 2rem;
@@ -176,7 +182,7 @@ footer{
     }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1920px) {
     h3 {
         font-size: 3rem;
         padding-bottom: 1.5rem;
@@ -185,9 +191,28 @@ footer{
         font-size: 2rem;
     }
 
-.chat-tos {
-    color: white;
-
+    .chat-tos {
+        color: white;
+    }
+    
+    .logo {
+        width: 500px;
+    }
+    
+    .homepage-content {
+       margin: 0 12em;   
+    }
+    
+    .homepage-text {
+        margin: 40px 20px;
+    }
+    .homepage-image {
+        margin: 40px 0 40px 20px;
+    }
+    
+    h5.contact-us-text {
+        font-size: 3rem;
+    }
 }
 
 @media (min-width: 768px) {

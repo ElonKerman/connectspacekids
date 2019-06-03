@@ -121,9 +121,8 @@ nav.navbar {
 
 @media (min-width: 2000px) {
     nav.navbar {
-        
+        padding: 4rem 12rem 0 10.5rem
     }
-
     .navbar-light {
         align-items: flex-end;
         .navbar-brand {
@@ -132,9 +131,9 @@ nav.navbar {
             padding: 0px;
         }
     }
-    
+
     .logo {
-        width: 450px;
+        width: 500px;
     }
 
     .left {
