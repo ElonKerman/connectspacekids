@@ -89,10 +89,18 @@ div.card {
     .mission-description {
         margin-left: 0px;
     }
+    
+    .text-center {
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 320px) {
     label.toggle-label {
         width: 90%;
+    }
+    
+    .text-center {
+        padding: .5rem;
     }
 }

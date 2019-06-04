@@ -144,10 +144,6 @@ footer{
     opacity: 1;
 }
 
-.homepage-image {
-    width: 100%;
-}
-
 .homepage-text {
     width: 90%;
     margin: 20px;
@@ -158,12 +154,10 @@ footer{
     overflow: hidden;
 }
 
-<<<<<<< HEAD
-=======
 .homepage-footer {
    color: black;
 }
->>>>>>> finish changes for adding margin to entire page at screensizes larger than 1920px
+
 @media (min-width: 1000px) {
     h3 {
         font-size: 2rem;
