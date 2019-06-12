@@ -163,6 +163,7 @@ footer{
 @media (min-width: 1000px) {
     h3 {
         font-size: 2rem;
+        padding-bottom: 1rem;
     }
     p {
         font-size: 1.2rem;
@@ -172,13 +173,15 @@ footer{
 @media (min-width: 2000px) {
     h3 {
         font-size: 3rem;
+        padding-bottom: 1.5rem;
     }
     p {
         font-size: 2rem;
     }
-=======
+
 .chat-tos {
     color: white;
+  }
 
 }
 
@@ -208,5 +211,3 @@ footer{
         width: 100%;
     }
 }
-=======
-

@@ -67,7 +67,27 @@
 
   setInterval(function(){
     $.getJSON( "/channels/<%= @channel.id %>", function(data){
-      console.log("test")
+      console.log(data)
+      var messages = ""
+      var i;
+for (i = 0; i < data.length; i++) {
+  var message = `
+        <p>
+                                <a href="/users/7/delete" rel="nofollow" data-confirm="are you sure">
+                                    <i class="fas fa-dumpster-fire"></i>
+                                </a>
+                              <span class="message">${data[i].text}</span>
+                                <a href="/messages/${data[i].id}/delete" data-confirm="are you sure">
+                                    <i class="fas fa-eraser"></i>
+                                </a>
+                          </p>
+        `;
+        console.log(message)
+        messages = messages + message
+}
+
+      $(".messages").html(messages)
+      $(".sendm-form button").html("send")
     })
-  }, 500)
+  }, 50)
 </script>
