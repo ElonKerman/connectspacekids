@@ -62,7 +62,7 @@ footer{
 }
 
 .launches.col-md-10 {
-    overflow: scroll;
+     /* overflow: scroll;  */
     height: 100%;
     margin-bottom: 40px;
 }
@@ -188,22 +188,22 @@ footer{
     .chat-tos {
         color: white;
     }
-    
+
     .logo {
         width: 500px;
     }
-    
+
     .homepage-content {
-       margin: 0 12em;   
+       margin: 0 12em;
     }
-    
+
     .homepage-text {
         margin: 40px 20px;
     }
     .homepage-image {
         margin: 40px 0 40px 20px;
     }
-    
+
     h5.contact-us-text {
         font-size: 3rem;
     }
@@ -231,11 +231,11 @@ footer{
     .homepage-text-image-wrapper {
         flex-direction: column;
     }
-    
+
     .homepage-text {
         width: 90%;
     }
-    
+
     .homepage-image {
         width: 100%;
         height: auto;
