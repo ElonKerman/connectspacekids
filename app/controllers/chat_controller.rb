@@ -34,7 +34,7 @@ class ChatController < ApplicationController
   end
   def deletem
     message = Message.find(params["id"])
-    if current_user.admin
+    if current_user.admin || current_user.mod
       message.destroy
     end
     redirect_to("/channels/#{message.channel_id}")
@@ -60,5 +60,27 @@ class ChatController < ApplicationController
     user.accepted_chat_tos = true
     user.save
     redirect_to("/chat")
+  end
+  def ad_edit
+    if current_user.admin != true
+      redirect_to("/", :notice => "Stop hacking you might be banned, #{current_user.username}")
+    else
+      @user = User.find(params["id"])
+      render("users/admin_edit.html.erb")
+    end
+
+  end
+  def admin_update
+    if current_user.admin != true
+      redirect_to("/", :notice => "Stop hacking you might be banned, #{current_user.username}")
+    else
+      @user = User.find(params["id"])
+      @user.username = params["username"]
+      @user.email = params["email"]
+      @user.mod = params["mod"]
+      @user.confirmed_at = params["confirmed_at"]
+      @user.save
+      redirect_to("/", :notice => "it worked")
+    end
   end
 end

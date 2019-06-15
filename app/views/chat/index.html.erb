@@ -43,18 +43,23 @@
       var messages = ""
       var i;
 for (i = 0; i < data.length; i++) {
-if (<%= current_user.admin == true %>){
-  var dumpster = `    <a href="/users/${data[i].user_id}/delete" rel="nofollow" data-confirm="are you sure">
-          <i class="fas fa-dumpster-fire"></i>
-      </a>`
+if (<%= current_user.admin == true || current_user.mod == true %>){
   var eraser = `<a href="/messages/${data[i].id}/delete" data-confirm="are you sure">
       <i class="fas fa-eraser"></i>
   </a>`
   }
   else{
-    var dumpster = ``
     var eraser = ``
   }
+
+  if (<%= current_user.admin == true  %>){
+    var dumpster = `    <a href="/users/${data[i].user_id}/delete" rel="nofollow" data-confirm="are you sure">
+            <i class="fas fa-dumpster-fire"></i>
+        </a>`
+    }
+    else{
+      var dumpster = ``
+    }
 
   var message = `
         <p>

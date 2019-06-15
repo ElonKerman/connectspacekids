@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_16_001248) do
+ActiveRecord::Schema.define(version: 2019_06_15_143910) do
 
   create_table "channels", force: :cascade do |t|
     t.string "name"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_04_16_001248) do
     t.string "username"
     t.boolean "admin", default: false
     t.boolean "accepted_chat_tos"
+    t.boolean "mod", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
