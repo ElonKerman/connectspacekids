@@ -16,7 +16,7 @@ class ChatController < ApplicationController
       respond_to do |format|
         format.html {render('index.html.erb')}
         format.json {
-          render json: @messages
+          render json: @messages, include: :user
         }
       end
     end
@@ -60,5 +60,26 @@ class ChatController < ApplicationController
     user.accepted_chat_tos = true
     user.save
     redirect_to("/chat")
+  end
+  def ad_edit
+    if current_user.admin != true
+      redirect_to("/", :notice => "Stop hacking you might be banned, #{current_user.username}")
+    else
+      @user = User.find(params["id"])
+      render("users/admin_edit.html.erb")
+    end
+
+  end
+  def admin_update
+    if current_user.admin != true
+      redirect_to("/", :notice => "Stop hacking you might be banned, #{current_user.username}")
+    else
+      @user = User.find(params["id"])
+      @user.username = params["username"]
+      @user.email = params["email"]
+      @user.confirmed_at = params["confirmed_at"]
+      @user.save
+      redirect_to("/", :notice => "it worked")
+    end
   end
 end

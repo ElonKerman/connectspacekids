@@ -15,21 +15,6 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="messages">
-                        <% @messages.each do |message| %>
-                          <p>
-                              <% if current_user.admin %>
-                                <a href="/users/<%= message.user_id %>/delete" rel = "nofollow" data-confirm = "are you sure">
-                                    <i class="fas fa-dumpster-fire"></i>
-                                </a>
-                              <% end %>
-                              <span class="message"><%= User.find(message.user_id).username %>: <%= message.text %></span>
-                              <% if current_user.admin %>
-                                <a href="/messages/<%= message.id %>/delete" data-confirm = "are you sure">
-                                    <i class="fas fa-eraser"></i>
-                                </a>
-                              <% end %>
-                          </p>
-                        <% end %>
                     </div>
                     <form class="form-inline sendm-form" action="/sendm" data-remote='true'>
                         <div class="form-group mb-2">
@@ -45,49 +30,50 @@
     </div>
   </div>
 </div>
+<footer class="footer">
+    connectspacekids © 2019
+</footer>
 <div id="background-container">
   <img src="/background_image.png" id="background-image" alt="graphic design of space and planets">
 </div>
 <script>
-  //$(".message").each(function () {
-      //console.log(this.textContent.length)
-      //for (var i = 0; i < this.textContent.length; i++) {
-          //var soc;
-          //var eoc;
-          //if (this.textContent[i] == "#") {
-              //soc = i;
-              //console.log(this.textContent[i])
-          //}
-          //if (soc && this.textContent[i] == " ") {
-              //eoc = i;
-          //}
-      //}
-      //console.log(this.textContent.substring(soc, eoc))
-  //})
-
   setInterval(function(){
+    console.log("/channels/<%= @channel.id %>");
     $.getJSON( "/channels/<%= @channel.id %>", function(data){
-      console.log(data)
       var messages = ""
       var i;
 for (i = 0; i < data.length; i++) {
+if (<%= current_user.admin == true %>){
+  var eraser = `<a href="/messages/${data[i].id}/delete" data-confirm="are you sure">
+      <i class="fas fa-eraser"></i>
+  </a>`
+  }
+  else{
+    var eraser = ``
+  }
+
+  if (<%= current_user.admin == true  %>){
+    var dumpster = `    <a href="/users/${data[i].user_id}/delete" rel="nofollow" data-confirm="are you sure">
+            <i class="fas fa-dumpster-fire"></i>
+        </a>`
+    }
+    else{
+      var dumpster = ``
+    }
+
   var message = `
         <p>
-                                <a href="/users/7/delete" rel="nofollow" data-confirm="are you sure">
-                                    <i class="fas fa-dumpster-fire"></i>
-                                </a>
-                              <span class="message">${data[i].text}</span>
-                                <a href="/messages/${data[i].id}/delete" data-confirm="are you sure">
-                                    <i class="fas fa-eraser"></i>
-                                </a>
-                          </p>
+            ${dumpster}
+            <span class="message">${data[i].user.username}: ${data[i].text}</span>
+            ${eraser}
+
+        </p>
         `;
-        console.log(message)
         messages = messages + message
 }
 
       $(".messages").html(messages)
       $(".sendm-form button").html("send")
     })
-  }, 50)
+  }, 500)
 </script>

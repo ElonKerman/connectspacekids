@@ -16,9 +16,6 @@
 .content {
     min-height: calc(100vh - 130px);
 }
-footer {
-    height: 50px;
-}
 
 #background-container {
     position: fixed;
@@ -60,11 +57,12 @@ footer {
 footer{
     text-align: center;
     height: 50px;
-    background: white;
+    color: white;
+    padding: 12px 0 15px 0;
 }
 
 .launches.col-md-10 {
-    overflow: scroll;
+     /* overflow: scroll;  */
     height: 100%;
     margin-bottom: 40px;
 }
@@ -138,7 +136,7 @@ footer{
 .homepage-text-image-wrapper {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .homepage.background-opaque-overlay {
@@ -146,13 +144,8 @@ footer{
     opacity: 1;
 }
 
-.homepage-image {
-    width: 60%;
-    height: 100%;
-}
-
 .homepage-text {
-    width: 40%;
+    width: 90%;
     margin: 20px;
 }
 
@@ -160,6 +153,11 @@ footer{
     height: 300px;
     overflow: hidden;
 }
+
+.homepage-footer {
+   color: black;
+}
+
 @media (min-width: 1000px) {
     h3 {
         font-size: 2rem;
@@ -168,9 +166,17 @@ footer{
     p {
         font-size: 1.2rem;
     }
+    .homepage-text-image-wrapper {
+        flex-wrap: nowrap;
+    }
+    .homepage-image {
+        width: 70%;
+        height: 70%;
+        margin: 20px;
+    }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1920px) {
     h3 {
         font-size: 3rem;
         padding-bottom: 1.5rem;
@@ -179,16 +185,31 @@ footer{
         font-size: 2rem;
     }
 
-.chat-tos {
-    color: white;
-  }
+    .chat-tos {
+        color: black;
+    }
 
+    .logo {
+        width: 500px;
+    }
+
+    .homepage-content {
+       margin: 0 12em;
+    }
+
+    .homepage-text {
+        margin: 40px 20px;
+    }
+    .homepage-image {
+        margin: 40px 0 40px 20px;
+    }
+
+    h5.contact-us-text {
+        font-size: 3rem;
+    }
 }
 
 @media (min-width: 768px) {
-    .background-opaque-overlay {
-        width: 70%;
-    }
     .main-content {
         width: 80%;
         flex-direction: row;
@@ -199,15 +220,24 @@ footer{
     }
 }
 
+@media (max-width: 768px) {
+    .homepage-image {
+        width: 100%;
+    }
+}
+
 
 @media (max-width: 425px) {
     .homepage-text-image-wrapper {
         flex-direction: column;
     }
+
     .homepage-text {
         width: 90%;
     }
+
     .homepage-image {
         width: 100%;
+        height: auto;
     }
 }
