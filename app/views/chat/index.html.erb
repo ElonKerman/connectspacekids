@@ -43,11 +43,7 @@
       var messages = ""
       var i;
 for (i = 0; i < data.length; i++) {
-<<<<<<< HEAD
-if (<%= current_user.admin == true %>){
-=======
 if (<%= current_user.admin == true || current_user.mod == true %>){
->>>>>>> a8b270907518f5da7f0cc4c233bac7f76358b784
   var eraser = `<a href="/messages/${data[i].id}/delete" data-confirm="are you sure">
       <i class="fas fa-eraser"></i>
   </a>`

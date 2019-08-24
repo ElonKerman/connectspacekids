@@ -77,10 +77,7 @@ class ChatController < ApplicationController
       @user = User.find(params["id"])
       @user.username = params["username"]
       @user.email = params["email"]
-<<<<<<< HEAD
-=======
       @user.mod = params["mod"]
->>>>>>> a8b270907518f5da7f0cc4c233bac7f76358b784
       @user.confirmed_at = params["confirmed_at"]
       @user.save
       redirect_to("/", :notice => "it worked")
