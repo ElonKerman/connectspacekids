@@ -54,6 +54,7 @@ div.card {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    margin-bottom: 10px;
 }
 
 .card-title {
@@ -83,13 +84,13 @@ div.card {
     }
 
     .card-text:last-child {
-        margin-bottom: .75rem;  
+        margin-bottom: .75rem;
     }
 
     .mission-description {
         margin-left: 0px;
     }
-    
+
     .text-center {
         padding: 1rem;
     }
@@ -99,7 +100,7 @@ div.card {
     label.toggle-label {
         width: 90%;
     }
-    
+
     .text-center {
         padding: .5rem;
     }

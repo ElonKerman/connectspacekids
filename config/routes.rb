@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get("/launchinfo", {:controller=>"launch_infos", :action=>"index"})
   root 'pc#home'
 
-
+  get("/past-launchinfo", {:controller=>"launch_infos", :action=>"past"})
   get("/chat", {:controller=>"chat", :action=>"index"})
   get("/channels/:id", {:controller=>"chat", :action=>"channel"})
   get("/sendm", {:controller=>"chat", :action=>"sendm"})

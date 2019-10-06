@@ -7,4 +7,12 @@ class LaunchInfosController < ApplicationController
     @launch_infos = LaunchInfo.order(:date_time => :asc)
     render('index.html.erb')
   end
+  def past
+    start_date = (Date.today - 1.month).strftime("%Y-%m-%d")
+  end_date = (Date.today).strftime("%Y-%m-%d")
+    @data = open("https://launchlibrary.net/1.4/launch?startdate=#{start_date}&enddate=#{end_date}").read
+    @launches = JSON.parse(@data)["launches"]
+    @launch_infos = LaunchInfo.order(:date_time => :asc)
+    render('index.html.erb')
+  end
 end
