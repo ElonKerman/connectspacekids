@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {users:{ registrations: "registrations"}}
+  devise_for :users, controllers: { registrations: "users/registrations"}
 
   get("/launchinfo", {:controller=>"launch_infos", :action=>"index"})
   root 'pc#home'
