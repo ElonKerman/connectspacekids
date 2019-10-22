@@ -42,10 +42,25 @@
                                             <h5 class="card-title">Mission Description:</h5>
                                             <h6 class="card-text mission-description"><%= launch['missions'][0]['description'] %></h6>
                                         </div>
-                                      <% end %>
-                                  </div>
-                              </div>
+                            </div>
                             <% end %>
+                                  </div>
+                                  <% end %>
+                                  <div class="col-md-10">
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="messages">
+                                              </div>
+                                              <form class="form-inline sendm-form" action="/sendm" data-remote='true'>
+                                                  <div class="form-group mb-2">
+                                                      <label for="inputtext" class="sr-only">message</label>
+                                                      <input type="text" class="form-control" id="inputtext" placeholder="message" name="message">
+                                                  </div>
+                                                  <button type="submit" class="btn btn-primary mb-2">Send</button>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
                             <% if launch['vidURLs'].present? %>
                               <h5 class="card-title">
                                   <a href="<%= launch['vidURLs'][0] %>">Webcast</a>
