@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get("/chat", {:controller=>"chat", :action=>"index"})
   get("/channels/:id", {:controller=>"chat", :action=>"channel"})
   get("/sendm", {:controller=>"chat", :action=>"sendm"})
+  get("/sendn", {:controller=>"launch_infos", :action=>"sendn"})
   get("/messages/:id/delete", {:controller=>"chat", :action=>"deletem"})
   get("/users/:id/delete", {:controller=>"chat", :action=>"deleteu"})
   get("/contactus", {:controller=>"pc", :action=>"contactus"})

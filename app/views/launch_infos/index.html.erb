@@ -51,11 +51,12 @@
                                           <div class="col-md-6">
                                               <div class="messages">
                                               </div>
-                                              <form class="form-inline sendm-form" action="/sendm" data-remote='true'>
+                                              <form class="form-inline sendm-form" action="/sendn" data-remote='true'>
                                                   <div class="form-group mb-2">
                                                       <label for="inputtext" class="sr-only">message</label>
                                                       <input type="text" class="form-control" id="inputtext" placeholder="message" name="message">
                                                   </div>
+                                                  <input type="hidden" value="<%= launch['name'] %>" class="form-control" name="launch">
                                                   <button type="submit" class="btn btn-primary mb-2">Send</button>
                                               </form>
                                           </div>

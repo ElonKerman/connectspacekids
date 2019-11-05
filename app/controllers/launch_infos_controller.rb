@@ -15,4 +15,15 @@ class LaunchInfosController < ApplicationController
     @launch_infos = LaunchInfo.order(:date_time => :asc)
     render('index.html.erb')
   end
+  def sendn
+    message = Message.new
+    message.user_id = current_user.id
+    message.text = params["message"]
+    message.launch = params["launch"]
+    message.save
+    respond_to do |format|
+      # format.html {redirect_to("/channels/#{message.channel_id}")}
+      format.js
+    end
+  end
 end
