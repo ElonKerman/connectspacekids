@@ -34,7 +34,7 @@ class ChatController < ApplicationController
   end
   def deletem
     message = Message.find(params["id"])
-    if current_user.admin || current_user.mod
+     if current_user.admin || current_user.mod
       message.destroy
     end
     redirect_to("/channels/#{message.channel_id}")

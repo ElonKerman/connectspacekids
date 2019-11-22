@@ -22,7 +22,7 @@ class LaunchInfosController < ApplicationController
     message.launch = params["launch"]
     message.save
     respond_to do |format|
-      # format.html {redirect_to("/channels/#{message.channel_id}")}
+        format.html {redirect_back(fallback_location: "/launchinfo/")}
       format.js
     end
   end

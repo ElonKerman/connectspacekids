@@ -50,8 +50,20 @@
                                       <div class="row">
                                           <div class="col-md-6">
                                               <div class="messages">
+                                                <% Message.where(launch: launch['name']).each do |om| %>
+                                                <div class="">
+                                                  <%= om.user.username %>:
+                                                  <%= om.text %>
+                                                  <% if current_user.admin == true || current_user.mod == true %>
+                                                    <a href="/messages/<%= om.id %>/delete" data-confirm="are you sure">
+                                                        <i class="fas fa-eraser"></i>
+                                                    </a>
+                                                  <% end %>
+                                                </div>
+
+                                                <% end %>
                                               </div>
-                                              <form class="form-inline sendm-form" action="/sendn" data-remote='true'>
+                                              <form class="form-inline sendm-form" action="/sendn">
                                                   <div class="form-group mb-2">
                                                       <label for="inputtext" class="sr-only">message</label>
                                                       <input type="text" class="form-control" id="inputtext" placeholder="message" name="message">
