@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get("/achat", {:controller=>"chat", :action=>"achat"})
   get("/adedit/:id", {:controller=>"chat", :action=>"ad_edit", as: "admin_edit"})
   get("/admin_update/:id", {:controller=>"chat", :action=>"admin_update", as: "admin_update"})
+  get("/marsweather", {:controller=>"pc", :action=>"mw"})
 end
