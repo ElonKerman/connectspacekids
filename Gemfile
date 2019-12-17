@@ -72,5 +72,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 
 platforms :mswin do
-  gem "wdm"
+  gem  'wdm (~> 0.1.1)'
 end
