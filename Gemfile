@@ -16,8 +16,11 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #gem 'wdm', '~> 0.1.1'
+=======
+>>>>>>> parent of a6de98c... Start Mars Weather
 =======
 >>>>>>> parent of a6de98c... Start Mars Weather
 # Use Uglifier as compressor for JavaScript assets
