@@ -15,8 +15,11 @@ gem "draft_generators", :git => "https://github.com/firstdraft/draft_generators"
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+<<<<<<< HEAD
 
 #gem 'wdm', '~> 0.1.1'
+=======
+>>>>>>> parent of a6de98c... Start Mars Weather
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
