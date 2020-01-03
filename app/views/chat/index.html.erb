@@ -7,10 +7,10 @@
                 <p><a href="/nc">New Channel</a></p>
               <% end %>
             <% @channels.each do |channel| %>
-              <%# if current_user.admin == true || current_user.mod == true %>
+              <% if current_user.admin == true || current_user.mod == true %>
               <p><a href="/dc/<%=channel.id%>-<%=channel.name%>/delete"><i class="fas fa-dumpster-fire"></i></a></p>
 
-              <%# end %>
+              <% end %>
               <% if channel == @channel %>
                 <p><a href="/channels/<%=channel.id%>-<%=channel.name%>" class="btn btn-dark"><%= channel.name %></a></p>
               <% else %>

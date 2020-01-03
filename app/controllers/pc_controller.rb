@@ -9,9 +9,9 @@ class PcController < ApplicationController
 
   def dc
     channel = Channel.find(params["id"])
-     #if current_user.admin || current_user.mod
-      channel.destroy
-  #  end
+      if current_user.admin || current_user.mod
+        channel.destroy
+      end
     redirect_to('/chat')
   end
 
