@@ -3,6 +3,9 @@
     <h1 class="text-center">All Chat Channels</h1>
     <div class="row justify-content-md-center">
         <div class="col-md-2">
+              <% if current_user.admin == true || current_user.mod == true %>
+                <p><a href="/nc">New Channel</a></p>
+              <% end %>
             <% @channels.each do |channel| %>
               <% if channel == @channel %>
                 <p><a href="/channels/<%=channel.id%>-<%=channel.name%>" class="btn btn-dark"><%= channel.name %></a></p>
