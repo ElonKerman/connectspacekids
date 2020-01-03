@@ -4,7 +4,7 @@
   padding: 12px;
   margin-top: 12px;
   width: 200px;
-  height: 240px;
+  height: auto;
   color: red;
   align-content: right;
   margin-left: auto;
@@ -32,7 +32,7 @@ img {
 }
 
 .em2{
-  background-size: 100% 50%;
+  background-size: 100%;
   background-repeat:no-repeat;
   background-position: center top;
 }
