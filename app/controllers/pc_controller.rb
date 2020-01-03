@@ -3,8 +3,8 @@ class PcController < ApplicationController
 
   end
 
-  def home
-
+  def mw
+    render('mars.html.erb')
   end
 
 end

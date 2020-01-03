@@ -17,12 +17,17 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #gem 'wdm', '~> 0.1.1'
 =======
 >>>>>>> parent of a6de98c... Start Mars Weather
 =======
 >>>>>>> parent of a6de98c... Start Mars Weather
+=======
+
+#gem 'wdm', '~> 0.1.1'
+>>>>>>> parent of c44ccbf... hi
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

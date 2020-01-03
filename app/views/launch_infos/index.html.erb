@@ -1,6 +1,6 @@
 <div class="background-container">
   <div class="background-opaque-overlay">
-      <h1 class="text-center">All Launches</h1>
+      <h1 class="text-center">Past Launches</h1>
       <div class="container">
           <div class="row justify-content-md-center">
               <div class="launches col-md-10">
@@ -54,7 +54,7 @@
                                                 <div class="">
                                                   <%= om.user.username %>:
                                                   <%= om.text %>
-                                                  <% if current_user.admin == true || current_user.mod == true %>
+                                                  <% if current_user.present? && (current_user.admin == true || current_user.mod == true) %>
                                                     <a href="/messages/<%= om.id %>/delete" data-confirm="are you sure">
                                                         <i class="fas fa-eraser"></i>
                                                     </a>
@@ -63,6 +63,7 @@
 
                                                 <% end %>
                                               </div>
+                                            <%  if current_user.present? %>
                                               <form class="form-inline sendm-form" action="/sendn">
                                                   <div class="form-group mb-2">
                                                       <label for="inputtext" class="sr-only">message</label>
@@ -71,6 +72,7 @@
                                                   <input type="hidden" value="<%= launch['name'] %>" class="form-control" name="launch">
                                                   <button type="submit" class="btn btn-primary mb-2">Send</button>
                                               </form>
+                                            <% end %>
                                           </div>
                                       </div>
                                   </div>
