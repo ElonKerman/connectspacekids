@@ -261,11 +261,15 @@ DEPENDENCIES
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   wdm (~> 0.1.1)
 =======
 >>>>>>> parent of a6de98c... Start Mars Weather
 =======
 >>>>>>> parent of a6de98c... Start Mars Weather
+=======
+  wdm (~> 0.1.1)
+>>>>>>> parent of c44ccbf... hi
 =======
   wdm (~> 0.1.1)
 >>>>>>> parent of c44ccbf... hi

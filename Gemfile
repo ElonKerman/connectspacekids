@@ -15,16 +15,12 @@ gem "draft_generators", :git => "https://github.com/firstdraft/draft_generators"
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+=======
+>>>>>>> parent of a6de98c... Start Mars Weather
+=======
 
 #gem 'wdm', '~> 0.1.1'
-=======
->>>>>>> parent of a6de98c... Start Mars Weather
-=======
->>>>>>> parent of a6de98c... Start Mars Weather
+>>>>>>> parent of c44ccbf... hi
 =======
 
 #gem 'wdm', '~> 0.1.1'
