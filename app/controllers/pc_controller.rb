@@ -1,4 +1,16 @@
 class PcController < ApplicationController
+
+  def home
+
+
+    response = Unirest.get("https://api.nasa.gov/planetary/apod?api_key=#{ENV["NASA_API_KEY"]}")
+    @imghdurl =  response.body["hdurl"]
+    @imgurl =  response.body["url"]
+
+
+
+  end
+
   def contactus
 
   end

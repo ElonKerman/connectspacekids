@@ -13,12 +13,10 @@
 }
 .main {
   display: flex;
-  font-size: 24px;
+  font-size: 18px;
   align-items: center;
 }
-img {
-  height: 2em;
-}
+
 .desc {
   color: blue;
 }
