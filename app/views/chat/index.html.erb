@@ -67,11 +67,17 @@ if (<%= current_user.admin == true || current_user.mod == true %>){
     else{
       var dumpster = ``
     }
+  if (<%= current_user.admin == true  %>){
+    var username = `<a href="/adedit/${data[i].user_id}">${data[i].user.username}<a/>`
+
+  }else{
+    var username=`${data[i].user.username}`
+  }
 
   var message = `
         <p>
             ${dumpster}
-            <span class="message">${data[i].user.username}: ${data[i].text}</span>
+            <span class="message">${username}: ${data[i].text}</span>
             ${eraser}
 
         </p>

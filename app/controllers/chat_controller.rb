@@ -80,7 +80,7 @@ class ChatController < ApplicationController
       @user.mod = params["mod"]
       @user.confirmed_at = params["confirmed_at"]
       @user.save
-      redirect_to("/", :notice => "it worked")
+      redirect_to("/chat", :notice => "it worked")
     end
   end
 end
