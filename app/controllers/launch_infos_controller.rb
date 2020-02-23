@@ -5,6 +5,7 @@ class LaunchInfosController < ApplicationController
     @data = open("https://launchlibrary.net/1.4/launch/next/15").read
     @launches = JSON.parse(@data)["launches"]
     @launch_infos = LaunchInfo.order(:date_time => :asc)
+    @title = "Upcoming Launches"
     render('index.html.erb')
   end
   def past
@@ -13,6 +14,7 @@ class LaunchInfosController < ApplicationController
     @data = open("https://launchlibrary.net/1.4/launch?startdate=#{start_date}&enddate=#{end_date}").read
     @launches = JSON.parse(@data)["launches"]
     @launch_infos = LaunchInfo.order(:date_time => :asc)
+    @title = "Past Launches"
     render('index.html.erb')
   end
   def sendn
