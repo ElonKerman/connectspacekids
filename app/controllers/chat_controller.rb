@@ -48,7 +48,7 @@ class ChatController < ApplicationController
   end
   def tos
     if current_user.blank?
-      redirect_to("/")
+      redirect_to("/", :notice => "You must login to access the chat feature of connectspacekids.")
     elsif current_user.accepted_chat_tos == nil
       render('tos.html.erb')
     else
